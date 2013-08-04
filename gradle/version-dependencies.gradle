@@ -1,0 +1,11 @@
+project.ext {
+    versionDep = [
+        // compile
+        groovy: "2.1.6",
+        guice: "3.0",
+
+        // testCompile
+        spock: "0.7-groovy-2.0",
+        junit: "4.11"
+    ]
+}

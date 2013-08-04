@@ -1,10 +1,18 @@
 apply plugin: 'groovy'
 
+apply from: 'gradle/version-dependencies.gradle'
+
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    compile "org.codehaus.groovy:groovy-all:${versionDep.groovy}"
+
+    compile "com.google.inject:guice:${versionDep.guice}"
+
+    testCompile "org.spockframework:spock-core:${versionDep.spock}"
+    testCompile "junit:junit:${versionDep.junit}"
 }
 
 task wrapper(type: Wrapper) {
