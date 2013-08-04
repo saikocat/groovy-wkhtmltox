@@ -14,6 +14,7 @@ dependencies {
     compile "org.slf4j:slf4j-log4j12:${versionDep.slf4j}"
 
     testCompile "org.spockframework:spock-core:${versionDep.spock}"
+    testCompile "org.spockframework:spock-guice:${versionDep.spock}"
     testCompile "junit:junit:${versionDep.junit}"
 }
 
@@ -24,4 +25,9 @@ configurations {
 
 task wrapper(type: Wrapper) {
     gradleVersion = '1.6'
+}
+
+task wtf(dependsOn: [ classes ]) {
+    //println sourceSets.main.collect { it }
+    //println sourceSets.main.runtimeClasspath.collect { it }
 }
