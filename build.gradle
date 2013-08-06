@@ -26,8 +26,3 @@ configurations {
 task wrapper(type: Wrapper) {
     gradleVersion = '1.6'
 }
-
-task wtf(dependsOn: [ classes ]) {
-    //println sourceSets.main.collect { it }
-    //println sourceSets.main.runtimeClasspath.collect { it }
-}
