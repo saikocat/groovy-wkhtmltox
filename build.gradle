@@ -33,3 +33,9 @@ task copyDepToLib(type: Copy) {
     into relativePath('lib')
     from configurations.runtime
 }
+
+task cleanLib(type: Delete) {
+    delete 'lib'
+}
+
+clean.dependsOn cleanLib
