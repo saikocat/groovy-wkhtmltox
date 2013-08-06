@@ -1,5 +1,8 @@
 # Compiled source
 .class
 
+# Dependencies folder
+lib/
+
 # OS
 .directory
