@@ -7,15 +7,17 @@ repositories {
 }
 
 dependencies {
-    compile "org.codehaus.groovy:groovy-all:${versionDep.groovy}"
+    compile (
+        "org.codehaus.groovy:groovy-all:${versionDep.groovy}",
+        "com.google.inject:guice:${versionDep.guice}",
+        "org.slf4j:slf4j-log4j12:${versionDep.slf4j}"
+    )
 
-    compile "com.google.inject:guice:${versionDep.guice}"
-
-    compile "org.slf4j:slf4j-log4j12:${versionDep.slf4j}"
-
-    testCompile "org.spockframework:spock-core:${versionDep.spock}"
-    testCompile "org.spockframework:spock-guice:${versionDep.spock}"
-    testCompile "junit:junit:${versionDep.junit}"
+    testCompile (
+        "org.spockframework:spock-core:${versionDep.spock}",
+        "org.spockframework:spock-guice:${versionDep.spock}",
+        "junit:junit:${versionDep.junit}"
+    )
 }
 
 configurations {
