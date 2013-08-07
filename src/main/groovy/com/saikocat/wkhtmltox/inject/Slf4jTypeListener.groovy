@@ -15,11 +15,11 @@ import com.saikocat.wkhtmltox.annotation.InjectLogger;
 
 @CompileStatic
 public class Slf4jTypeListener implements TypeListener {
-    public <I> void hear(TypeLiteral<I> typeLiteral, TypeEncounter<I> typeEncounter) {
+    public <T> void hear(TypeLiteral<T> typeLiteral, TypeEncounter<T> typeEncounter) {
         for (Field field : typeLiteral.getRawType().getDeclaredFields()) {
             if (field.getType() == Logger.class
                 && field.isAnnotationPresent(InjectLogger.class)) {
-                typeEncounter.register(new Slf4jMembersInjector<I>(field));
+                typeEncounter.register(new Slf4jMembersInjector<T>(field));
             }
           }
     }

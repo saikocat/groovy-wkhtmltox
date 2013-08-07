@@ -16,8 +16,8 @@ public class Slf4jMembersInjector<T>  implements MembersInjector<T> {
     private final Logger logger;
 
     Slf4jMembersInjector(Field field) {
-        field = field;
-        logger = LoggerFactory.getLogger(field.getDeclaringClass());
+        this.field = field;
+        this.logger = LoggerFactory.getLogger(field.getDeclaringClass());
         field.setAccessible(true);
     }
 

@@ -12,7 +12,7 @@ import com.saikocat.wkhtmltox.helper.impl.*;
 @CompileStatic
 public class DefaultConfigModule extends AbstractModule {
     protected void configure() {
-        bind(StreamHelper).to(StreamHelperImpl);
+        bind(StreamHelper.class).to(StreamHelperImpl.class);
 
         bindListener(Matchers.any(), new Slf4jTypeListener());
     }
