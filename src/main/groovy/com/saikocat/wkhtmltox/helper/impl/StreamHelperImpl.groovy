@@ -1,6 +1,7 @@
 package com.saikocat.wkhtmltox.helper.impl;
 
 import com.google.inject.Inject;
+import com.google.inject.name.Named;
 
 import groovy.transform.CompileStatic;
 import groovy.transform.CompileDynamic;
@@ -12,13 +13,15 @@ import com.saikocat.wkhtmltox.helper.StreamHelper;
 
 @CompileStatic
 public class StreamHelperImpl implements StreamHelper {
-    private final String DEFAULT_CHARSET = "UTF-8";`
+    @Inject
+    @Named("DefaultCharset")
+    String charset;
 
     @InjectLogger
     Logger logger;
 
     public String getError(Process process) {
-        return process.getErrorStream().withReader(DEFAULT_CHARSET) { Reader reader ->
+        return process.getErrorStream().withReader(charset) { Reader reader ->
             reader.getText();
         }
     }
