@@ -20,8 +20,8 @@ public class StreamHelperImpl implements StreamHelper {
     @InjectLogger
     Logger logger;
 
-    public String getError(Process process) {
-        return process.getErrorStream().withReader(charset) { Reader reader ->
+    public String getError(InputStream input) {
+        return input.withReader(charset) { Reader reader ->
             reader.getText();
         }
     }

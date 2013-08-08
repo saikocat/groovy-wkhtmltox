@@ -9,7 +9,7 @@ import com.saikocat.wkhtmltox.annotation.InjectLogger;
 
 @CompileStatic
 public interface StreamHelper {
-    public String getError(Process process);
+    public String getError(InputStream input);
     public void copy(InputStream input, OutputStream output);
     public byte[] toByteArray(InputStream input);
 }
