@@ -3,6 +3,7 @@ project.ext {
         // compile
         groovy: "2.1.6",
         guice: "3.0",
+        guiceMultibindings: "3.0",
         slf4j: "1.7.5",
 
         // testCompile
