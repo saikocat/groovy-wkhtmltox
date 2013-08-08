@@ -1,8 +1,10 @@
 # Compiled source
 .class
+build/
 
 # Dependencies folder
 lib/
+.gradle/
 
 # OS
 .directory
