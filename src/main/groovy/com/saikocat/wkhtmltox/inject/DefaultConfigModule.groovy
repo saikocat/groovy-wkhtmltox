@@ -37,5 +37,6 @@ public class DefaultConfigModule extends AbstractModule {
 
     protected void bindServices() {
         bind(WkhtmltoxService.class).to(WkhtmltoxServiceImpl.class);
+        bind(AsyncWkhtmltoxService.class).to(AsyncWkhtmltoxServiceImpl.class);
     }
 }
