@@ -13,12 +13,15 @@ import com.saikocat.wkhtmltox.helper.StreamHelper;
 
 @CompileStatic
 public class StreamHelperImpl implements StreamHelper {
-    @Inject
-    @Named("DefaultCharset")
-    String charset;
-
     @InjectLogger
     Logger logger;
+
+    final String charset;
+
+    @Inject
+    public StreamHelperImpl(@Named("DefaultCharset") String charset) {
+        this.charset = charset;
+    }
 
     public String getError(InputStream input) {
         return input.withReader(charset) { Reader reader ->
